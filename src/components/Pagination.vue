@@ -4,13 +4,13 @@
     <nav v-if="pageData.totalPages>1" aria-label="Page navigation">
         <ul class="pagination">
         <li v-if="pageData.page != 1" @click.prevent="showPage(pageData.page - 1)">
-            <a href="#" aria-label="Previous">
+            <a href="#" @click="scrollUp" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
-        <li v-for="(pageNumber) in pageData.totalPages" :key="pageNumber" :class="checkCurrentPage(pageNumber)" @click.prevent="showPage(pageNumber)"><a href="#">{{pageNumber}}</a></li>
+        <li v-for="(pageNumber) in pageData.totalPages" :key="pageNumber" :class="checkCurrentPage(pageNumber)" @click.prevent="showPage(pageNumber)" @click="scrollUp"><a href="#">{{pageNumber}}</a></li>
         <li v-if="pageData.page != pageData.totalPages" @click.prevent="showPage(pageData.page + 1)">
-            <a href="#" aria-label="Next">
+            <a href="#" @click="scrollUp" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
             </a>
         </li>
@@ -34,11 +34,16 @@ export default {
     ...mapGetters(["pageData", "topicReplyURL", "hasPosts"])
   },
   methods: {
-    ...mapActions(["showPage"]),
+    ...mapActions(["showPage","scrollUp"]),
     checkCurrentPage(pageNumber) {
       return {
         active: this.$store.state.page == pageNumber ? true : false
       };
+    },
+    scrollUp() {
+      //var element = this.$refs['app-top'];
+      //var top = element.offsetTop;
+      window.scrollTo(0, 0);
     }
   }
 };
