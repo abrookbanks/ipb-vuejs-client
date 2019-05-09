@@ -1,7 +1,7 @@
 <template>
   <div class="row pagination-wrapper">
     <div class="col-md-9 col-sm-8 col-xs-8">
-    <nav v-if="pageData.totalPages>1" aria-label="Page navigation">
+      <nav v-if="pageData.totalPages>1" aria-label="Page navigation">
         <ul class="pagination">
         <li v-if="pageData.page != 1" @click.prevent="showPage(pageData.page - 1)">
             <a href="#" @click="scrollUp" aria-label="Previous">
@@ -15,7 +15,7 @@
             </a>
         </li>
         </ul>
-    </nav>
+      </nav>
     </div>
     <div class="col-md-3 col-sm-4 col-xs-4 text-right">
       <a :href="topicReplyURL" target="_parent" class="button success">

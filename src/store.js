@@ -45,9 +45,6 @@ export default new Vuex.Store({
     setPosts(state, payload) {
       this.state.posts = payload;
     },
-    setTopic(state, payload) {
-      this.state.topic = payload;
-    },
     setStatusMessage(state, payload) {
       this.state.statusMessage = payload;
     },
@@ -95,17 +92,6 @@ export default new Vuex.Store({
               }
             }
             commit("setPosts", posts);
-
-            Vue.http
-              .get(
-                "forums/topics/" + this.state.topicId + "?key=" + IPBConfig.API_KEY + "&hidden=0"
-              )
-              .then(response => {
-                return response.json();
-              })
-              .then(data => {
-                commit("setTopic", data);
-              });
           } else {
             commit("setStatusMessage", "No posts were found.");
           }

@@ -30,7 +30,7 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "ForumPosts",
   computed: {
-    ...mapGetters(["posts", "topic", "statusMessage"])
+    ...mapGetters(["posts", "statusMessage"])
   },
   methods: {
     ...mapMutations(["setStatusMessage"])
