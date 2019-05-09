@@ -1,7 +1,7 @@
 module.exports = {
     configureWebpack: {
       output: {
-        filename: 'app.js'
+        filename: 'ipb-vuejs-client.js'
       },
       optimization: {
         splitChunks: false
