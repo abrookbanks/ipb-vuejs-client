@@ -2,7 +2,8 @@
   <div>
       <div v-if="posts.length > 0">
         <transition-group name="fade" tag="div">
-          <div v-for="(post, index) in posts" :key="index" class="post-body">
+          <!-- index + 0 is a work around see: https://github.com/vuejs/eslint-plugin-vue/issues/726#issuecomment-451740732 -->
+          <div v-for="(post, index) in posts" :key="index + 0" class="post-body">
             <div class="row">
               <div class="small-3 columns text-center author">
                 <h5 v-html="post.author.formattedName"></h5>
