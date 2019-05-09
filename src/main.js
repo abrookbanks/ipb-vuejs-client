@@ -1,20 +1,17 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from "vue"
-import VueResource from "vue-resource"
-import VueRouter from "vue-router"
-import App from "./App"
-import { store } from "./store/store"
+import Vue from 'vue'
+import VueResource from 'vue-resource'
+import VueMoment from 'vue-moment'
+import App from './App.vue'
+import store from './store'
+import IPBConfig from '../ipb.config'
+
+Vue.config.productionTip = false
 
 Vue.use(VueResource)
-Vue.http.options.root = "https://forums.cubecart.com/api/";
-Vue.use(VueRouter)
-const router = new VueRouter({mode: 'history'});
+Vue.use(VueMoment);
+Vue.http.options.root = IPBConfig.API_ENDPOINT;
 
 new Vue({
-  el: "#app",
   store,
-  router,
-  components: { App },
-  template: "<App/>"
-});
+  render: h => h(App)
+}).$mount('#app')

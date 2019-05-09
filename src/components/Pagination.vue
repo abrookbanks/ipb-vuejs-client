@@ -18,7 +18,7 @@
     </nav>
     </div>
     <div class="col-md-3 col-sm-4 col-xs-4 text-right">
-      <a :href="topicReplyURL" target="_parent" class="btn btn-success">
+      <a :href="topicReplyURL" target="_parent" class="button success">
         <span v-if="hasPosts">Reply to this thread</span>
         <span v-else>Be the first to comment</span>
       </a>

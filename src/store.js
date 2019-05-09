@@ -1,12 +1,11 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
+import IPBConfig from '../ipb.config'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
   state: {
-    key: "78c5f88039b0170f87e51981bc4c55bf",
-    validDomain: "cubecart.com",
     topicId: 0, // e.g. 52794
     page: 0,
     perPage: 0,
@@ -69,7 +68,7 @@ export const store = new Vuex.Store({
             "/posts?page=" +
             this.state.page +
             "&key=" +
-            this.state.key
+            IPBConfig.API_KEY
         )
         .then(response => {
           return response.json();
@@ -99,7 +98,7 @@ export const store = new Vuex.Store({
 
             Vue.http
               .get(
-                "forums/topics/" + this.state.topicId + "?key=" + this.state.key + "&hidden=0"
+                "forums/topics/" + this.state.topicId + "?key=" + IPBConfig.API_KEY + "&hidden=0"
               )
               .then(response => {
                 return response.json();
