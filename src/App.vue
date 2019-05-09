@@ -1,6 +1,6 @@
 <template>
   <div id="app" data-tid="49390">
-      <h3 rel="app-top">Community Discussion</h3>
+      <h3>Community Discussion</h3>
       <ForumPosts/>
   </div>
 </template>

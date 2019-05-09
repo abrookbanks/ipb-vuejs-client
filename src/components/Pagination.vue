@@ -41,9 +41,9 @@ export default {
       };
     },
     scrollUp() {
-      //var element = this.$refs['app-top'];
-      //var top = element.offsetTop;
-      window.scrollTo(0, 0);
+      var element = document.getElementById("app");
+      var top = element.offsetTop;
+      window.scrollTo(0, top);
     }
   }
 };
