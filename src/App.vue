@@ -18,7 +18,7 @@ export default {
     ForumPosts
   },
   mounted() {
-    this.setTopicId(this.$el.getAttribute('data-tid'));
+    this.setTopicId(window.topicId);
     this.$store.dispatch("showPage", 1);
   }
 };
