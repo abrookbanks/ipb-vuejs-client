@@ -1,5 +1,5 @@
 <template>
-  <div id="app" data-tid="49390">
+  <div id="app">
       <h3 id="scroll-to">Community Discussion</h3>
       <ForumPosts/>
   </div>
